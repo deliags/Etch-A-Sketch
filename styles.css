@@ -1,19 +1,31 @@
-body{
+
+.header,
+.grid-area{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-
 .container {
 	top: 30px;
 	outline:2px solid #000;
 	font-size: 0;
-	margin:0;
+	margin:5vh;
 	height:800px;
 	width:800px;
 	padding: 0;
 	border: none;
+}
+
+.clear-grid{
+  color: aliceblue;
+  background-color: #255;
+  border: 3px solid #255;
+  border-radius: 10%;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  font-weight: 700;
 }
 
 .grid{

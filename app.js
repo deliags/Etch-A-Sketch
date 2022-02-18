@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+const clearButton = document.querySelector(".clear-grid");
 
 //creates a grid with the given amount of rows/columns
 const createGrid = (amount) => {
@@ -16,5 +17,13 @@ const createGrid = (amount) => {
 const changeColor = (square) => {
   square.style.backgroundColor = "black";
 }
+
+//Refreshes page
+const clearGrid = () => {
+  location.reload();
+}
+
+//When button is clicked, page is refreshed
+clearButton.addEventListener('click', clearGrid);
 
 createGrid(16);
