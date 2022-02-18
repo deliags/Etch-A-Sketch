@@ -5,30 +5,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Etch-A-Sketch</title>
+  <title>Pixel Board</title>
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
 </head>
 
 <body>
   <section class="layout">
-    
-    <div class="header">
-      <button class="clear-grid">Clean Me!</button>
-      <button class="mode bw">Black & White Mode</button>
-      <button class="mode rainbow">Rainbow Mode</button>
+    <header>
+      <h1 class="title">~ <span>Pixel Board</span> ~</h1>
+      <div class="description">
+        <p>Chose a brush mode first and then draw by moving your mouse over the grid.</p>
+        <p>You can also personalize the size of the pixels!</p>
+
+      </div>
+    </header>
+
+    <div class="options">
+      <div class="size-controls">
+        <button class="button small">Small Squares</button>
+        <button class="button medium">Medium Squares</button>
+        <button class="button big">Big Squares</button>
+      </div>
+      <div class="mode-controls">
+        <button class="button mode bw">Black & White Mode</button>
+        <button class="button mode rainbow">Rainbow Mode</button>
+      </div>
+
+      <div class="clear-controls">
+        <button class="button clear-grid">Clean Me!</button>
+        <button class="button eraser">Eraser</button>
+      </div>
+
     </div>
 
     <div class="grid-area">
       <div class="container"></div>
     </div>
 
-    <div class="controls">
-      <button class="small">Small Squares</button>
-      <button class="medium">Medium Squares</button>
-      <button class="big">Big Squares</button>
-      <button class="eraser">Eraser</button>
-    </div>
 
   </section>
 

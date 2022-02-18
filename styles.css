@@ -1,69 +1,118 @@
-button{
-  color: aliceblue;
-  background-color: #255;
-  border: 3px solid #255;
-  border-radius: 10%;
-  padding: 5px 15px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: medium;
+body {
+  background-color: #272727;
+  font-family: "Roboto", sans-serif;
   font-weight: 700;
 }
 
-.header,
-.grid-area{
+
+.grid-area {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
-.header{
-  gap: 5vw;
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+.title {
+  font-size: 100px;
+  align-self: center;
+  margin: 0;
+  color: #4255fb;
+}
+.description{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5vh;
+}
+
+p{
+  align-self: center;
+  color: #eff1f3ff;
+  margin: 0;
+}
+
+span {
+  color: #eff1f3ff;
+}
+
 .container {
-	top: 30px;
-	outline:10px solid #255;
-	font-size: 0;
-	margin:5vh;
-	height:800px;
-	width:800px;
-	padding: 0;
-	border: none;
+  align-self: center;
+  outline: 10px solid rgb(175, 19, 65);
+  margin: 5vh;
+  height: 600px;
+  width: 600px;
+  padding: 0;
+  border-radius: 0.5%;
+
 }
 
-.grid{
+.grid {
   margin: 0;
   padding: 0;
-  outline:1px solid rgb(114, 114, 114);
-  background-color: #eeeeee;
+  outline: 1px solid rgb(114, 114, 114);
+  background-color: #eff1f3ff;
   float: left;
 }
 
-.controls{
+.options {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
 }
 
-.small-grid{
-  height: 12.5px;
-  width: 12.5px;
+.small-grid {
+  height: 9.375px;
+  width: 9.375px;
   float: left;
 }
 
-.medium-grid{
-  height: 25px;
-  width: 25px;
+.medium-grid {
+  height: 18.75px;
+  width: 18.755px;
   float: left;
 }
 
-.big-grid{
-  height: 50px;
-  width: 50px;
+.big-grid {
+  height: 37.5px;
+  width: 37.5px;
   float: left;
 }
 
-.eraser{
-  background-color: #552240;
-  border: 3px solid #552240;
+
+.button {
+  padding: 10px 25px;
+  color: #eff1f3ff;
+  background: transparent;
+  outline: none !important;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  border: 2px solid #eff1f3ff;
+}
+
+.button:hover {
+  background: #4255fb;
+  color: #eff1f3ff;
+}
+
+.button:active {
+  top: 2px;
+}
+
+.clear-grid {
+  color: #eff1f3ff;
+  border: 2px solid rgb(175, 19, 65);
+}
+
+.clear-grid:hover {
+  background: rgba(175, 19, 65, 0.5);
+  color: #eff1f3ff;
 }
