@@ -16,6 +16,9 @@ button{
   align-items: center;
 }
 
+.header{
+  gap: 5vw;
+}
 .container {
 	top: 30px;
 	outline:10px solid #255;

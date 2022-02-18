@@ -1,9 +1,12 @@
 const container = document.querySelector(".container");
-const clearButton = document.querySelector(".clear-grid");
-const smallButton = document.querySelector(".small");
-const mediumButton = document.querySelector(".medium");
-const bigButton = document.querySelector(".big");
-const eraserButton = document.querySelector(".eraser");
+
+const clearBtn = document.querySelector(".clear-grid");
+const smallBtn = document.querySelector(".small");
+const mediumBtn = document.querySelector(".medium");
+const bigBtn = document.querySelector(".big");
+const eraserBtn = document.querySelector(".eraser");
+const bwModeBtn = document.querySelector(".bw");
+const rainbowModeBtn = document.querySelector(".rainbow");
 const DEFAULT = 16;
 
 //Refreshes page
@@ -19,7 +22,7 @@ const createGrid = (size) => {
   for (let i = 0; i < size; i++){
     for (let j = 0; j < size; j++) {
       const gridRow = document.createElement('div');
-      gridRow.setAttribute('onmouseover', 'changeColor(this)');
+      // gridRow.setAttribute('onmouseover', 'changeColor(this)');
 
       if (size === 16) {
         gridRow.classList.add('big-grid', 'grid');
@@ -36,9 +39,29 @@ const createGrid = (size) => {
   };
 };
 
-//changes color of div when mouse hovers on it 
-const changeColor = (square) => {
+//Activates black & white mode
+const bwMode = () => {
+  const gridSquares = document.querySelectorAll('.grid');
+  gridSquares.forEach(gridSquare => gridSquare.setAttribute('onmouseover', 'bwColor(this)'));
+}
+
+//changes color to black 
+const bwColor = (square) => {
   square.style.backgroundColor = "black";
+};
+
+//Activates rainbow mode
+const rainbowMode = () => {
+  const gridSquares = document.querySelectorAll('.grid');
+  gridSquares.forEach(gridSquare => gridSquare.setAttribute('onmouseover', 'rainbowColor(this)'));
+}
+
+//changes color to rainbow (random color)
+const rainbowColor = (square) => {
+  const randomR = Math.floor(Math.random() * 256);
+  const randomG = Math.floor(Math.random() * 256);
+  const randomB = Math.floor(Math.random() * 256);
+  square.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
 };
 
 const eraseColor = () => {
@@ -52,16 +75,18 @@ const eraser = (square) => {
 
 const startGame = () => {
   //When button is clicked, page is refreshed
-  clearButton.addEventListener('click', () => { clearGrid(), createGrid(DEFAULT) });
+  clearBtn.addEventListener('click', () => { clearGrid(), createGrid(DEFAULT) });
 
   //On launch
   createGrid(DEFAULT);
 
   //On click, board is cleared and new size is selected
-  smallButton.addEventListener('click', () => { clearGrid(), createGrid(64) });
-  mediumButton.addEventListener('click', () => { clearGrid(), createGrid(32) });
-  bigButton.addEventListener('click', () => { clearGrid(), createGrid(16); });
-  eraserButton.addEventListener('click', eraseColor);
+  smallBtn.addEventListener('click', () => { clearGrid(), createGrid(64) });
+  mediumBtn.addEventListener('click', () => { clearGrid(), createGrid(32) });
+  bigBtn.addEventListener('click', () => { clearGrid(), createGrid(16); });
+  eraserBtn.addEventListener('click', eraseColor);
+  bwModeBtn.addEventListener('click', bwMode);
+  rainbowModeBtn.addEventListener('click', rainbowMode)
 }
 
 startGame();
