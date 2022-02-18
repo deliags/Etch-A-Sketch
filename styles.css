@@ -1,3 +1,9 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .container {
 	top: 30px;
@@ -8,17 +14,18 @@
 	width:800px;
 	padding: 0;
 	border: none;
-  
 }
 
 .grid{
-  
   margin: 0;
   padding: 0;
   outline:1px solid #000;
   height: 50px;
   width: 50px;
   float: left;
-  
+}
+
+.color-change{
+  background-color: #000;
 }
 
