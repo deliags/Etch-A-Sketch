@@ -3,7 +3,7 @@ button{
   background-color: #255;
   border: 3px solid #255;
   border-radius: 10%;
-  padding: 10px;
+  padding: 5px 15px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: medium;
   font-weight: 700;
@@ -18,24 +18,22 @@ button{
 
 .container {
 	top: 30px;
-	outline:2px solid #000;
+	outline:10px solid #255;
 	font-size: 0;
 	margin:5vh;
 	height:800px;
 	width:800px;
 	padding: 0;
 	border: none;
-  /* overflow: auto; */
 }
 
-/* .grid{
+.grid{
   margin: 0;
   padding: 0;
-  outline:1px solid #000;
-  height: 50px;
-  width: 50px;
+  outline:1px solid rgb(114, 114, 114);
+  background-color: #eeeeee;
   float: left;
-} */
+}
 
 .controls{
   display: flex;
@@ -45,28 +43,24 @@ button{
 }
 
 .small-grid{
-  margin: 0;
-  padding: 0;
-  outline:1px solid #000;
   height: 12.5px;
   width: 12.5px;
   float: left;
 }
 
 .medium-grid{
-  margin: 0;
-  padding: 0;
-  outline:1px solid #000;
   height: 25px;
   width: 25px;
   float: left;
 }
 
 .big-grid{
-  margin: 0;
-  padding: 0;
-  outline:1px solid #000;
   height: 50px;
   width: 50px;
   float: left;
+}
+
+.eraser{
+  background-color: #552240;
+  border: 3px solid #552240;
 }

@@ -3,6 +3,8 @@ const clearButton = document.querySelector(".clear-grid");
 const smallButton = document.querySelector(".small");
 const mediumButton = document.querySelector(".medium");
 const bigButton = document.querySelector(".big");
+const eraserButton = document.querySelector(".eraser");
+const DEFAULT = 16;
 
 //Refreshes page
 const clearGrid = () => {
@@ -38,15 +40,28 @@ const createGrid = (size) => {
 const changeColor = (square) => {
   square.style.backgroundColor = "black";
 };
-  
 
+const eraseColor = () => {
+  const gridSquares = document.querySelectorAll('.grid');
+  gridSquares.forEach(gridSquare => gridSquare.setAttribute('onmouseover', 'eraser(this)'));
+  
+};
+const eraser = (square) => {
+  square.style.backgroundColor = '#eeeeee';
+};
 
 const startGame = () => {
   //When button is clicked, page is refreshed
-  clearButton.addEventListener('click', clearGrid);
+  clearButton.addEventListener('click', () => { clearGrid(), createGrid(DEFAULT) });
+
+  //On launch
+  createGrid(DEFAULT);
+
+  //On click, board is cleared and new size is selected
   smallButton.addEventListener('click', () => { clearGrid(), createGrid(64) });
   mediumButton.addEventListener('click', () => { clearGrid(), createGrid(32) });
-  bigButton.addEventListener('click', () => { clearGrid(), createGrid(16) });
+  bigButton.addEventListener('click', () => { clearGrid(), createGrid(16); });
+  eraserButton.addEventListener('click', eraseColor);
 }
 
 startGame();
