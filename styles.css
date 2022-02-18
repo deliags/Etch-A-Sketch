@@ -1,3 +1,13 @@
+button{
+  color: aliceblue;
+  background-color: #255;
+  border: 3px solid #255;
+  border-radius: 10%;
+  padding: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: medium;
+  font-weight: 700;
+}
 
 .header,
 .grid-area{
@@ -15,17 +25,7 @@
 	width:800px;
 	padding: 0;
 	border: none;
-}
-
-.clear-grid{
-  color: aliceblue;
-  background-color: #255;
-  border: 3px solid #255;
-  border-radius: 10%;
-  padding: 10px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: medium;
-  font-weight: 700;
+  overflow: auto;
 }
 
 .grid{
@@ -37,7 +37,9 @@
   float: left;
 }
 
-.color-change{
-  background-color: #000;
+.controls{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
-
