@@ -1,14 +1,17 @@
-body {
-  background-color: #272727;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
+:root {
+  --font-family: "Roboto", sans-serif;
+  --font-weight: 700;
+  --dark-color: #272727;
+  --white-color: #eff1f3ff;
+  --rainbow-c1: rgb(233, 39, 136);
+  --rainbow-c2: rgb(81, 39, 233);
 }
 
-
-.grid-area {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+body {
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
 }
 
 header {
@@ -17,27 +20,42 @@ header {
   justify-content: center;
 }
 
+p {
+  align-self: center;
+  font-weight: 500;
+  ;
+  margin: 0;
+}
+
+span {
+  color: var(--white-color);
+}
+
 .title {
   font-size: 100px;
   align-self: center;
   margin: 0;
   color: #4255fb;
 }
-.description{
+
+.description {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 5vh;
 }
 
-p{
-  align-self: center;
-  color: #eff1f3ff;
-  margin: 0;
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-span {
-  color: #eff1f3ff;
+.grid-area {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .container {
@@ -48,23 +66,14 @@ span {
   width: 600px;
   padding: 0;
   border-radius: 0.5%;
-
 }
 
 .grid {
   margin: 0;
   padding: 0;
-  outline: 1px solid rgb(114, 114, 114);
-  background-color: #eff1f3ff;
+  outline: 1px solid rgb(129, 129, 129);
+  background-color: var(--white-color);
   float: left;
-}
-
-.options {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
 }
 
 .small-grid {
@@ -88,19 +97,20 @@ span {
 
 .button {
   padding: 10px 25px;
-  color: #eff1f3ff;
+  margin: 10px;
+  color: var(--white-color);
   background: transparent;
   outline: none !important;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
-  border: 2px solid #eff1f3ff;
+  border: 2px solid var(--white-color);
 }
 
 .button:hover {
   background: #4255fb;
-  color: #eff1f3ff;
+  color: var(--white-color);
 }
 
 .button:active {
@@ -108,11 +118,23 @@ span {
 }
 
 .clear-grid {
-  color: #eff1f3ff;
+  color: var(--white-color);
   border: 2px solid rgb(175, 19, 65);
 }
 
 .clear-grid:hover {
   background: rgba(175, 19, 65, 0.5);
-  color: #eff1f3ff;
+  color: var(--white-color);
 }
+
+.rainbow {
+  color: var(--white-color); 
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, var(--rainbow-c1), var(--rainbow-c2));
+}
+
+.rainbow:hover {
+  background-image: linear-gradient(100deg, var(--rainbow-c1), var(--rainbow-c2));
+  color: var(--white-color);
+}
+
